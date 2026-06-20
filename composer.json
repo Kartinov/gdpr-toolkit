@@ -1,0 +1,48 @@
+{
+    "version": "1.0.0",
+    "name": "kartinov/gdpr-toolkit",
+    "description": "GDPR toolkit for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dimche Kartinov",
+            "email": "dimchekartinov@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^10.0|^11.0|^13.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.17",
+        "phpunit/phpunit": "^10.5",
+        "pestphp/pest": "^2.8",
+        "pestphp/pest-plugin-laravel": "^2.0",
+        "laravel/pint": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kartinov\\GdprToolkit\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kartinov\\GdprToolkit\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kartinov\\GdprToolkit\\GdprToolkitServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
