@@ -1,5 +1,4 @@
 {
-    "version": "1.0.0",
     "name": "kartinov/gdpr-toolkit",
     "description": "GDPR toolkit for Laravel",
     "type": "library",
@@ -38,7 +37,6 @@
             ]
         }
     },
-    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {
