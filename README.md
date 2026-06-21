@@ -1,5 +1,10 @@
 # GDPR Toolkit for Laravel
 
+[![Latest Stable Version](https://poser.pugx.org/kartinov/gdpr-toolkit/v/stable)](https://packagist.org/packages/kartinov/gdpr-toolkit)
+[![Total Downloads](https://poser.pugx.org/kartinov/gdpr-toolkit/downloads)](https://packagist.org/packages/kartinov/gdpr-toolkit)
+[![License](https://poser.pugx.org/kartinov/gdpr-toolkit/license)](https://packagist.org/packages/kartinov/gdpr-toolkit)
+
+
 A lightweight package to help Laravel developers address GDPR requirements.
 
 ---
