@@ -7,10 +7,23 @@ use Kartinov\GdprToolkit\GdprToolkitManager;
 
 class ScanCommand extends Command
 {
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
     protected $signature = 'gdpr:scan';
 
-    protected $description = 'Scan models for personal data fields';
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Scan subject models and generate a draft RoPA JSON file';
 
+    /**
+     * Execute the console command.
+     */
     public function handle(GdprToolkitManager $manager)
     {
         $this->info($manager->scan());

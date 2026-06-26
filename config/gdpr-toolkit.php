@@ -12,16 +12,27 @@ return [
     |
     */
 
-    // Column name heuristics for personal data
+    // Subject models (people we care about)
+    'subject_models' => [
+        'App\\Models\\User',
+        // 'App\\Models\\Customer',
+    ],
+
+    // Personal fields to look for
     'personal_data_columns' => [
-        'email', 'phone', 'address', 'ip', 'dob', 'name',
+        'name', 'email', 'phone', 'address', 'dob', 'national_id',
     ],
 
-    // Models to exclude from scanning
-    'exclude_models' => [
-        // App\Models\Example::class,
+    // Foreign key suffix convention (default "_id")
+    'foreign_key_suffix' => '_id',
+
+    // Explicit overrides for unusual foreign keys
+    // e.g. reviewer_id should be treated as User
+    'foreign_key_overrides' => [
+        // 'reviewer_id' => 'App\\Models\\User',
+        // 'manager_id'  => 'App\\Models\\Customer',
     ],
 
-    // RoPA output format
-    'ropa_output' => 'storage/app/gdpr-ropa.json',
+    // Models to exclude completely
+    'exclude_models' => [],
 ];
