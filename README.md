@@ -134,6 +134,21 @@ Each subject model maps to:
 - `fields` — personal data columns on the subject's own table
 - `{related_table}` — personal data columns on tables linked by foreign key
 
+### Exporting personal data (Article 15 / 20)
+
+Generate a complete personal data export for a specific subject:
+
+```bash
+php artisan gdpr:export App\Models\User 1
+php artisan gdpr:export App\Models\User john@example.com --output=storage/app/export.json
+```
+
+- First argument: fully qualified model class (e.g. `App\Models\User`)
+- Second argument: identifier — ID or email
+- `--output` (optional): custom output path, defaults to `storage/app/gdpr-export.json`
+
+The export includes the subject's own personal fields plus all related table records linked by foreign key. An audit log entry is written to `audit_logs` if the table exists.
+
 ### Marking models with `HasPersonalData`
 
 Attach the `HasPersonalData` trait to any Eloquent model and declare its personal data fields:
@@ -154,20 +169,19 @@ class User extends Authenticatable
 }
 ```
 
-The trait provides two methods:
+The trait provides one method:
 
 ```php
 $user->exportPersonalData(); // Returns array of field => value
-$user->erasePersonalData();  // Nullifies personal fields and saves
 ```
 
 ## Roadmap
 
 | Phase | Status | Description |
-|-------|--------|-------------|
+| |-------|--------|-------------|
 | Scanning core | Done | `gdpr:scan` with FK detection and nested RoPA output |
-| Export / Erase | Planned | `gdpr:export` and `gdpr:erase` Artisan commands |
-| Audit logging | Planned | Immutable log for every export or erasure action |
+| Export | Done | `gdpr:export` Artisan command for Article 15 / 20 data portability |
+| Audit logging | Planned | Immutable log for every export action |
 | Consent logging | Planned | `HasConsentLog` trait for recording user consent |
 
 ## Important Disclaimer

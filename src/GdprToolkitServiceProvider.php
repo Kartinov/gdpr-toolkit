@@ -37,6 +37,7 @@ class GdprToolkitServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->commands([
                 Console\ScanCommand::class,
+                Console\ExportCommand::class,
             ]);
         }
     }

@@ -14,13 +14,4 @@ trait HasPersonalData
 
         return $data;
     }
-
-    public function erasePersonalData(): void
-    {
-        foreach ($this->personalData ?? [] as $field) {
-            $this->{$field} = null;
-        }
-
-        $this->save();
-    }
 }
