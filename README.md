@@ -175,14 +175,6 @@ The trait provides one method:
 $user->exportPersonalData(); // Returns array of field => value
 ```
 
-## Roadmap
-
-| Phase | Status | Description |
-| |-------|--------|-------------|
-| Scanning core | Done | `gdpr:scan` with FK detection and nested RoPA output |
-| Export | Done | `gdpr:export` Artisan command for Article 15 / 20 data portability |
-| Audit logging | Planned | Immutable log for every export action |
-| Consent logging | Planned | `HasConsentLog` trait for recording user consent |
 
 ## Important Disclaimer
 
